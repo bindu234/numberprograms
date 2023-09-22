@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isHappy(numba1) {
+        let sum = 0;
+        numba = numba1.toString().split('')
+        let numbaArr = numba.map(y => parseInt(y))
+        for (var x = 0; x < numbaArr.length; x++) {
+            sum += numbaArr[x] ** 2
+        }
+        if (sum > 1) {
+            isHappy(sum)
+        }
+        else if (sum === 1) {
+            return true
+        }
+        else if (sum <= 0) {
+            return false
+        }
+    }
+    let n=parseInt(prompt("enter a number"));
+    console.log(isHappy(n))
+</script>
+</html>
